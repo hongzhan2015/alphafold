@@ -1,0 +1,146 @@
+{
+  "warning": "Provisional coarse rigid-body fit to a sharpened full map; not cross-validated.",
+  "map": "/Users/hong/Documents/Project/Manuscript/Crown_heterogenity/bhimes/20251028_maps/branch6_28_mature_smallest_spherule_8.5A.mrc",
+  "source_pdb": "/tmp/8FM9.pdb",
+  "ca_atoms": 7692,
+  "source_ca_center_xyz_angstrom": [
+    240.01297672906898,
+    239.9912619604776,
+    252.64850442017703
+  ],
+  "target_ca_center_xyz_angstrom": [
+    361.25,
+    358.75,
+    337.5
+  ],
+  "rotation_about_z_degrees": 28.0,
+  "model_z_reversed": true,
+  "mean_density_at_ca": 0.05183839797973633,
+  "mean_density_at_floor_ca": 0.05754057690501213,
+  "mean_density_at_pol_ca": 0.046564314514398575,
+  "fraction_ca_above_map_mean_plus_2sd": 0.23426937077483098,
+  "best_by_z_orientation": {
+    "normal": {
+      "score": 0.12247361987829208,
+      "reverse_z": false,
+      "angle_deg": 1.5,
+      "target_center_xyz_angstrom": [
+        361.25,
+        361.25,
+        352.5
+      ]
+    },
+    "reversed": {
+      "score": 0.05183839797973633,
+      "reverse_z": true,
+      "angle_deg": 28.0,
+      "target_center_xyz_angstrom": [
+        361.25,
+        358.75,
+        337.5
+      ]
+    }
+  },
+  "top_orientation_hypotheses": [
+    {
+      "score": 0.12247361987829208,
+      "reverse_z": false,
+      "angle_deg": 1.5,
+      "target_center_xyz_angstrom": [
+        361.25,
+        361.25,
+        352.5
+      ]
+    },
+    {
+      "score": 0.12241551280021667,
+      "reverse_z": false,
+      "angle_deg": 1.0,
+      "target_center_xyz_angstrom": [
+        361.25,
+        361.25,
+        352.5
+      ]
+    },
+    {
+      "score": 0.12240448594093323,
+      "reverse_z": false,
+      "angle_deg": 1.5,
+      "target_center_xyz_angstrom": [
+        361.25,
+        358.75,
+        352.5
+      ]
+    },
+    {
+      "score": 0.12236946076154709,
+      "reverse_z": false,
+      "angle_deg": 1.0,
+      "target_center_xyz_angstrom": [
+        358.75,
+        361.25,
+        352.5
+      ]
+    },
+    {
+      "score": 0.12235258519649506,
+      "reverse_z": false,
+      "angle_deg": 1.0,
+      "target_center_xyz_angstrom": [
+        361.25,
+        358.75,
+        352.5
+      ]
+    },
+    {
+      "score": 0.12227565795183182,
+      "reverse_z": false,
+      "angle_deg": 1.0,
+      "target_center_xyz_angstrom": [
+        358.75,
+        358.75,
+        352.5
+      ]
+    },
+    {
+      "score": 0.12197912484407425,
+      "reverse_z": false,
+      "angle_deg": 1.5,
+      "target_center_xyz_angstrom": [
+        358.75,
+        361.25,
+        352.5
+      ]
+    },
+    {
+      "score": 0.12194783240556717,
+      "reverse_z": false,
+      "angle_deg": 1.5,
+      "target_center_xyz_angstrom": [
+        358.75,
+        358.75,
+        352.5
+      ]
+    },
+    {
+      "score": 0.12111154198646545,
+      "reverse_z": false,
+      "angle_deg": 0.5,
+      "target_center_xyz_angstrom": [
+        361.25,
+        358.75,
+        352.5
+      ]
+    },
+    {
+      "score": 0.12109214812517166,
+      "reverse_z": false,
+      "angle_deg": 0.5,
+      "target_center_xyz_angstrom": [
+        358.75,
+        361.25,
+        352.5
+      ]
+    }
+  ]
+}

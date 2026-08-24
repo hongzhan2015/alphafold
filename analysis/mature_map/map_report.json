@@ -1,0 +1,103 @@
+{
+  "header": {
+    "shape_xyz": [
+      288,
+      288,
+      288
+    ],
+    "shape_zyx": [
+      288,
+      288,
+      288
+    ],
+    "mode": 2,
+    "dtype": "<f4",
+    "start_xyz": [
+      0,
+      0,
+      0
+    ],
+    "grid_xyz": [
+      288,
+      288,
+      288
+    ],
+    "cell_angstrom": [
+      720.0,
+      720.0,
+      720.0
+    ],
+    "voxel_size_angstrom_xyz": [
+      2.5,
+      2.5,
+      2.5
+    ],
+    "axis_order_mapc_mapr_maps": [
+      1,
+      2,
+      3
+    ],
+    "header_density_min_max_mean": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "ispg": 1,
+    "nsymbt": 0,
+    "origin_xyz_angstrom": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "header_rms": 0.0,
+    "map_signature": "MAP "
+  },
+  "statistics": {
+    "file": "/Users/hong/Documents/Project/Manuscript/Crown_heterogenity/bhimes/20251028_maps/branch6_28_mature_smallest_spherule_8.5A.mrc",
+    "file_size_bytes": 95552512,
+    "finite_voxels": 23887872,
+    "nonzero_voxels": 23887872,
+    "zero_fraction": 0.0,
+    "actual_min": -0.521216630935669,
+    "actual_max": 0.6088296175003052,
+    "actual_mean": 0.00856782030314207,
+    "actual_std": 0.056329742074012756,
+    "nonzero_percentiles": {
+      "0.1": -0.17813164764642717,
+      "0.5": -0.13723314240574835,
+      "1": -0.12063138276338578,
+      "5": -0.08033285886049271,
+      "25": -0.02806328609585762,
+      "50": 0.007496878504753113,
+      "75": 0.0437619611620903,
+      "95": 0.09989649057388306,
+      "99": 0.1491160608828067,
+      "99.5": 0.1744291368871927,
+      "99.9": 0.26959844782957176
+    },
+    "two_sigma_threshold": 0.12122730445116758,
+    "two_sigma_voxels": 585020,
+    "positive_density_center_zyx_voxels": [
+      129.8978734222885,
+      143.31897146573735,
+      143.31607243186588
+    ],
+    "positive_density_center_xyz_angstrom": [
+      358.2901810796647,
+      358.2974286643434,
+      324.7446835557213
+    ],
+    "two_sigma_bbox_zyx_inclusive": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        287,
+        287,
+        287
+      ]
+    ]
+  }
+}
