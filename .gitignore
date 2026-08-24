@@ -1,0 +1,9 @@
+logs/*
+!logs/.gitkeep
+tmp/
+outputs/
+*.mrc
+*.map
+*.sif
+*.bin
+*.bin.zst

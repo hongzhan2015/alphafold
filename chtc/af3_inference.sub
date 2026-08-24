@@ -1,0 +1,26 @@
+# Submit after the CPU data-pipeline job succeeds:
+# condor_submit chtc/af3_inference.sub job_name=fhv_a_monomer
+
+universe = vanilla
+AF3_ROOT = /staging/u/REPLACE_NETID/alphafold3
+
+container_image = file://$(AF3_ROOT)/alphafold3.sif
+executable = chtc/run_af3_inference.sh
+arguments = "$(job_name)"
+environment = "AF3_ROOT=$(AF3_ROOT)"
+
+log = logs/inference_$(job_name)_$(Cluster).log
+output = logs/inference_$(job_name)_$(Cluster).out
+error = logs/inference_$(job_name)_$(Cluster).err
+
+requirements = (HasCHTCStaging == true)
+request_cpus = 8
+request_memory = 128GB
+request_disk = 30GB
+request_gpus = 1
+gpus_minimum_capability = 8.0
+gpus_minimum_memory = 80000
++GPUJobLength = "short"
+
+queue
+

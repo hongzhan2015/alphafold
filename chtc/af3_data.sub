@@ -1,0 +1,23 @@
+# Submit with:
+# condor_submit chtc/af3_data.sub input_json=inputs/fhv_a_monomer.json job_name=fhv_a_monomer
+
+universe = vanilla
+AF3_ROOT = /staging/u/REPLACE_NETID/alphafold3
+
+container_image = file://$(AF3_ROOT)/alphafold3.sif
+executable = chtc/run_af3_data.sh
+arguments = "$(input_json) $(job_name)"
+transfer_input_files = $(input_json)
+preserve_relative_paths = true
+environment = "AF3_ROOT=$(AF3_ROOT)"
+
+log = logs/data_$(job_name)_$(Cluster).log
+output = logs/data_$(job_name)_$(Cluster).out
+error = logs/data_$(job_name)_$(Cluster).err
+
+requirements = (HasCHTCStaging == true)
+request_cpus = 8
+request_memory = 64GB
+request_disk = 20GB
+
+queue
