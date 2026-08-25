@@ -15,9 +15,9 @@ notify_user = hzhan3@wisc.edu
 # for submitted job, using condor_qedit CLUSTER.NUMBER JobNotification 2 NotifyUser '"your_email@com"'
 
 universe = vanilla
-AF3_ROOT = /staging/u/hzhan3/alphafold3
+AF3_ROOT = /staging/hzhan3/alphafold3
 
-container_image = osdf:///chtc/staging/u/hzhan3/alphafold3/alphafold3-2026-08-24.sif
+container_image = file:///staging/hzhan3/alphafold3/alphafold3-2026-08-24.sif
 executable = chtc/run_af3_data.sh
 arguments = "$(input_json) $(job_name)"
 
