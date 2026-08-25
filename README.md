@@ -33,9 +33,11 @@ then assemble with C12 symmetry and fit/refine against the map.
    to rediscover its C12 geometry from a 12-chain run.
 5. For the mature crown, fit basal Pol/floor and apical Pol/leg domains into the
    cryo-ET map, impose C12 non-crystallographic symmetry where justified, and
-   refine against half-maps. Keep the asymmetric central density separate.
-6. Cross-validate every fitted/refined model against the unused half-map and
-   report local map-model FSC, geometry, clashes, and AF3 confidence separately.
+   refine conservatively against the map. Keep the asymmetric central density
+   separate.
+6. When half-maps exist, cross-validate against the unused half-map. For the
+   current sharpened map, report the missing half-map limitation and keep the
+   interpretation at domain/secondary-structure level.
 
 Suitable density-fitting tools include ChimeraX for initial placement and
 Phenix real-space refinement or ISOLDE for restrained refinement. AF3 confidence
@@ -97,8 +99,15 @@ Edit `AF3_ROOT` in both files under `chtc/` to replace `REPLACE_NETID`.
 
 ## Generate and submit experiments
 
-The repository already contains JSONs for 1, 2, and 4 full-length copies. To
-regenerate them:
+For the newly supplied G4WWB0 FASTA and staged C24 strategy, follow
+[`FHV_C24_WORKFLOW.md`](FHV_C24_WORKFLOW.md). Generate its recommended inputs:
+
+```bash
+python3 scripts/make_fhv_c24_inputs.py
+```
+
+The older 8FM9-construct JSONs for 1, 2, and 4 full-length copies can be
+regenerated separately:
 
 ```bash
 python3 scripts/make_af3_inputs.py
@@ -120,10 +129,9 @@ condor_submit chtc/af3_inference.sub job_name=fhv_a_monomer
 Repeat for `fhv_a_dimer` and, only after those succeed, `fhv_a_tetramer`.
 Use `condor_tail`, `.out`, `.err`, and `.log` to monitor and diagnose jobs.
 
-## What is still needed
+## What would improve validation
 
-To build the mature-crown fitting/refinement stage, add the latest map and both
-independently refined half-maps (preferably unsharpened MRC/CCP4), the nominal
-and local resolution information, voxel size, applied symmetry, sharpening or
-filtering history, and the map origin/axis convention. The half-maps are needed
-to detect overfitting.
+The supplied sharpened map is sufficient for provisional rigid-domain fitting.
+Unsharpened half-maps, if they can ever be recovered, would permit overfitting
+checks. Also preserve the nominal/local resolution, applied symmetry,
+sharpening/filtering history, and map origin/axis convention.

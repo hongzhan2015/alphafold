@@ -1,0 +1,34 @@
+{
+  "name": "fhv_g4wwb0_floor_core_55_396_c12",
+  "modelSeeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "sequences": [
+    {
+      "protein": {
+        "id": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L"
+        ],
+        "sequence": "TRALQRAVIDKTKTPIGTRFYPLDSLRTVTPKRAINNGHAVSGAVRDAARRLIDEAITSVGGSKFEVNPNPNSSTGLRKHFHFAVGDLAQDFRNDTPAEDAFIVGVDVDYYVTEPDVLLEHMRPVVLHTFNPKKVSGFDADSPFTIKNNLVEYKVSGGAAWVHPVWDWCEAGEFIASRVRTSWKEWVLQLPLRIVGLEKVGYHKIHHCRPWTDCPDRSLVYTIPQYTVWRFNWIDTELHVRKLKRIEYQDETKPGWNRLEYVTDKNQLMVSIGREGEHAQITIEKEKLDMLSGLSATQSVNARLIGMGHKDPQYTSMIVQYYTGKRVVSPISPTVYKPTMPR",
+        "description": "FHV protein A G4WWB0 residues 55-396; 12 identical copies; C12 floor-core hypothesis"
+      }
+    }
+  ],
+  "dialect": "alphafold3",
+  "version": 4
+}

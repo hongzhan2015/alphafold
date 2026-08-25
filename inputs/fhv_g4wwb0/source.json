@@ -1,0 +1,13 @@
+{
+  "fasta": "reference/FHV_proteinA_G4WWB0.fasta",
+  "header": "tr|G4WWB0|G4WWB0_FHV RNA-directed RNA polymerase OS=Flock house virus OX=12287 PE=3 SV=1",
+  "sequence_length": 998,
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "note": "Residue ranges are inclusive and refer to the supplied 998-aa G4WWB0 sequence."
+}

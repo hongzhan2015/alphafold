@@ -1,0 +1,8 @@
+name	residue_range	copies	protein_tokens	tier	status	purpose	json
+fhv_g4wwb0_full_monomer	1-998	1	998	recommended	within published 80-GB benchmark	single-chain baseline	fhv_g4wwb0_full_monomer.json
+fhv_g4wwb0_full_dimer	1-998	2	1996	recommended	within published 80-GB benchmark	adjacent-interface hypotheses	fhv_g4wwb0_full_dimer.json
+fhv_g4wwb0_full_tetramer	1-998	4	3992	recommended	within published 80-GB benchmark	local crown neighborhood	fhv_g4wwb0_full_tetramer.json
+fhv_g4wwb0_floor_core_55_396_c12	55-396	12	4104	recommended	within published 80-GB benchmark	C12 floor-core hypothesis	fhv_g4wwb0_floor_core_55_396_c12.json
+fhv_g4wwb0_nterm_1_452_c4	1-452	4	1808	recommended	within published 80-GB benchmark	local floor/leg alternatives	fhv_g4wwb0_nterm_1_452_c4.json
+fhv_g4wwb0_pol_453_896_c4	453-896	4	1776	recommended	within published 80-GB benchmark	local polymerase-ring alternatives	fhv_g4wwb0_pol_453_896_c4.json
+fhv_g4wwb0_linker_pol_379_896_c4	379-896	4	2072	recommended	within published 80-GB benchmark	linker-to-polymerase context	fhv_g4wwb0_linker_pol_379_896_c4.json
