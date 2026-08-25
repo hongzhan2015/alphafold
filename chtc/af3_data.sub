@@ -4,7 +4,7 @@
 #   condor_submit chtc/af3_data.sub
 #
 # Change these two values together when moving to the next experiment.
-input_json = inputs/fhv_g4wwb0/fhv_g4wwb0_full_monomer.json
+input_json = /home/hzhan3/alphafold/inputs/fhv_g4wwb0/fhv_g4wwb0_full_monomer.json
 job_name = fhv_g4wwb0_full_monomer
 
 # Adding notification when job is finished
@@ -18,7 +18,7 @@ universe = vanilla
 AF3_ROOT = /staging/hzhan3/alphafold3
 
 container_image = file:///staging/hzhan3/alphafold3/alphafold3-2026-08-24.sif
-executable = chtc/run_af3_data.sh
+executable = /home/hzhan3/alphafold/chtc/run_af3_data.sh
 arguments = "$(input_json) $(job_name)"
 
 should_transfer_files = YES
