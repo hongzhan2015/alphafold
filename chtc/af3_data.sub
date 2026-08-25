@@ -7,6 +7,13 @@
 input_json = inputs/fhv_g4wwb0/fhv_g4wwb0_full_monomer.json
 job_name = fhv_g4wwb0_full_monomer
 
+# Adding notification when job is finished
+# Send email to the email address
+notification = Complete
+notify_user = hzhan3@wisc.edu
+
+# for submitted job, using condor_qedit CLUSTER.NUMBER JobNotification 2 NotifyUser '"your_email@com"'
+
 universe = vanilla
 AF3_ROOT = /staging/u/hzhan3/alphafold3
 
