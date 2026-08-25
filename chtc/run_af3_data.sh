@@ -7,7 +7,35 @@ job_name=${2:?usage: run_af3_data.sh INPUT_JSON JOB_NAME}
 
 db_dir="$AF3_ROOT/databases"
 output_dir="$AF3_ROOT/runs/$job_name"
+test -s "$input_json"
+test -d "$db_dir"
 mkdir -p "$output_dir"
+
+# The sequence is carried in the AF3 JSON rather than embedded in this script.
+# Print a concise check in the Condor output before starting the long pipeline.
+python - "$input_json" "$job_name" <<'PY'
+import json
+import sys
+
+path, expected_name = sys.argv[1:]
+with open(path) as handle:
+    payload = json.load(handle)
+if payload.get("name") != expected_name:
+    raise SystemExit(
+        f"JSON name {payload.get('name')!r} does not match job_name {expected_name!r}"
+    )
+proteins = [entry["protein"] for entry in payload.get("sequences", []) if "protein" in entry]
+if not proteins:
+    raise SystemExit("The input JSON has no protein sequence")
+for protein in proteins:
+    chain_ids = protein["id"] if isinstance(protein["id"], list) else [protein["id"]]
+    print(
+        f"AF3 input: {expected_name}; chains={','.join(chain_ids)}; "
+        f"residues_per_chain={len(protein['sequence'])}; "
+        f"protein_tokens={len(protein['sequence']) * len(chain_ids)}",
+        flush=True,
+    )
+PY
 
 python /app/alphafold/run_alphafold.py \
   --json_path="$input_json" \
@@ -17,4 +45,3 @@ python /app/alphafold/run_alphafold.py \
   --force_output_dir
 
 test -s "$output_dir/${job_name}_data.json"
-
