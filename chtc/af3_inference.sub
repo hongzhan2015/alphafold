@@ -2,6 +2,7 @@
 # condor_submit chtc/af3_inference.sub job_name=fhv_a_monomer
 
 universe = vanilla
+initialdir = /home/hzhan3/alphafold
 AF3_ROOT = /staging/hzhan3/alphafold3
 AF3_OUTPUT_ROOT = /staging/hzhan3/alphafold_output
 

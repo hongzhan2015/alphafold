@@ -4,7 +4,7 @@
 #   condor_submit chtc/af3_data.sub
 #
 # Change these two values together when moving to the next experiment.
-input_json = /home/hzhan3/alphafold/inputs/fhv_g4wwb0/fhv_g4wwb0_full_monomer.json
+input_json = inputs/fhv_g4wwb0/fhv_g4wwb0_full_monomer.json
 job_name = fhv_g4wwb0_full_monomer
 
 # Adding notification when job is finished
@@ -15,11 +15,12 @@ notify_user = hzhan3@wisc.edu
 # for submitted job, using condor_qedit CLUSTER.NUMBER JobNotification 2 NotifyUser '"your_email@com"'
 
 universe = vanilla
+initialdir = /home/hzhan3/alphafold
 AF3_ROOT = /staging/hzhan3/alphafold3
 AF3_OUTPUT_ROOT = /staging/hzhan3/alphafold_output
 
 container_image = file:///staging/hzhan3/alphafold3/alphafold3-2026-08-24.sif
-executable = /home/hzhan3/alphafold/chtc/run_af3_data.sh
+executable = chtc/run_af3_data.sh
 arguments = "$(input_json) $(job_name)"
 
 should_transfer_files = YES
@@ -32,7 +33,7 @@ log = logs/data_$(job_name)_$(Cluster).log
 output = logs/data_$(job_name)_$(Cluster).out
 error = logs/data_$(job_name)_$(Cluster).err
 
-requirements = (HasCHTCStaging == true)
+requirements = (HasCHTCStaging == true) && (TARGET.HasAlphafold3 == true)
 request_cpus = 8
 request_memory = 64GB
 request_disk = 20GB
