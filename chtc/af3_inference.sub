@@ -4,7 +4,7 @@
 universe = vanilla
 AF3_ROOT = /staging/u/hzhan3/alphafold3
 
-container_image = osdf:///chtc/staging/u/hzhan3/alphafold3/alphafold3-2026-08-24.sif
+container_image = file:///staging/u/hzhan3/alphafold3/alphafold3-2026-08-24.sif
 executable = chtc/run_af3_inference.sh
 arguments = "$(job_name)"
 environment = "AF3_ROOT=$(AF3_ROOT)"
