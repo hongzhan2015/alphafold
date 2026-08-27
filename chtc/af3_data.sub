@@ -16,6 +16,7 @@ notify_user = hzhan3@wisc.edu
 
 universe = vanilla
 AF3_ROOT = /staging/hzhan3/alphafold3
+AF3_OUTPUT_ROOT = /staging/hzhan3/alphafold_output
 
 container_image = file:///staging/hzhan3/alphafold3/alphafold3-2026-08-24.sif
 executable = /home/hzhan3/alphafold/chtc/run_af3_data.sh
@@ -25,7 +26,7 @@ should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
 transfer_input_files = $(input_json)
 preserve_relative_paths = true
-environment = "AF3_ROOT=$(AF3_ROOT)"
+environment = "AF3_ROOT=$(AF3_ROOT) AF3_OUTPUT_ROOT=$(AF3_OUTPUT_ROOT)"
 
 log = logs/data_$(job_name)_$(Cluster).log
 output = logs/data_$(job_name)_$(Cluster).out

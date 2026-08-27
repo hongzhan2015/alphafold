@@ -6,7 +6,8 @@ job_name=${2:?usage: run_af3_data.sh INPUT_JSON JOB_NAME}
 : "${AF3_ROOT:?AF3_ROOT must be set by the submit file}"
 
 db_dir="$AF3_ROOT/databases"
-output_dir="$AF3_ROOT/runs/$job_name"
+output_root=${AF3_OUTPUT_ROOT:-"$AF3_ROOT/runs"}
+output_dir="$output_root/$job_name"
 test -s "$input_json"
 test -d "$db_dir"
 mkdir -p "$output_dir"
@@ -45,3 +46,4 @@ python /app/alphafold/run_alphafold.py \
   --force_output_dir
 
 test -s "$output_dir/${job_name}_data.json"
+echo "AF3 processed input: $output_dir/${job_name}_data.json"
