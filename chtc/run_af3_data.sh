@@ -21,13 +21,13 @@ else
   exit 2
 fi
 output_root=${AF3_OUTPUT_ROOT:-"$AF3_ROOT/runs"}
-output_dir="$output_root/$job_name"
+job_output_dir="$output_root/$job_name"
 [[ -s "$input_json" ]] || {
   echo "ERROR: transferred AF3 input is missing or empty: $input_json" >&2
   echo "Working directory: $(pwd)" >&2
   exit 2
 }
-mkdir -p "$output_dir"
+mkdir -p "$output_root"
 echo "AF3 database directory: $db_dir"
 
 # The sequence is carried in the AF3 JSON rather than embedded in this script.
@@ -59,9 +59,13 @@ PY
 python /app/alphafold/run_alphafold.py \
   --json_path="$input_json" \
   --db_dir="$db_dir" \
-  --output_dir="$output_dir" \
+  --output_dir="$output_root" \
   --norun_inference \
   --force_output_dir
 
-test -s "$output_dir/${job_name}_data.json"
-echo "AF3 processed input: $output_dir/${job_name}_data.json"
+processed_json="$job_output_dir/${job_name}_data.json"
+[[ -s "$processed_json" ]] || {
+  echo "ERROR: AF3 completed but its processed JSON was not found: $processed_json" >&2
+  exit 2
+}
+echo "AF3 processed input: $processed_json"
