@@ -1,5 +1,11 @@
 # Submit after the CPU data-pipeline job succeeds:
-# condor_submit chtc/af3_inference.sub job_name=fhv_a_monomer
+# condor_submit chtc/af3_inference.sub
+
+job_name = fhv_g4wwb0_full_monomer
+input_json = /staging/hzhan3/alphafold_output/fhv_g4wwb0_full_monomer/fhv_g4wwb0_full_monomer/fhv_g4wwb0_full_monomer_data.json
+
+notification = Complete
+notify_user = hzhan3@wisc.edu
 
 universe = vanilla
 initialdir = /home/hzhan3/alphafold
@@ -8,7 +14,7 @@ AF3_OUTPUT_ROOT = /staging/hzhan3/alphafold_output
 
 container_image = file:///staging/hzhan3/alphafold3/alphafold3-2026-08-24.sif
 executable = chtc/run_af3_inference.sh
-arguments = "$(job_name)"
+arguments = "$(job_name) $(input_json)"
 environment = "AF3_ROOT=$(AF3_ROOT) AF3_OUTPUT_ROOT=$(AF3_OUTPUT_ROOT)"
 
 log = logs/inference_$(job_name)_$(Cluster).log
@@ -21,7 +27,7 @@ request_memory = 128GB
 request_disk = 30GB
 request_gpus = 1
 gpus_minimum_capability = 8.0
-gpus_minimum_memory = 80000
+gpus_minimum_memory = 80000M
 +GPUJobLength = "short"
 
 queue
